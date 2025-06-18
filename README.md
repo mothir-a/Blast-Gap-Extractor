@@ -1,4 +1,4 @@
-# Blast-Gap-Extracter: Uncovered Region Extractor from All-vs-All BLASTn Results
+# Blast-Gap-Extractor: Uncovered Region Extractor from All-vs-All BLASTn Results
 
 ## Overview
 
