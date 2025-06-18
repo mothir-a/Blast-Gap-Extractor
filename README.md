@@ -30,7 +30,7 @@ blastn \
   -out all_blastn_out.tsv \
   -outfmt 6
 
-# Note: Replace all_genomes.mfa and all_blastn_out.tsv with appropriate filenames for your data.
+** Note:** Replace all_genomes.mfa and all_blastn_out.tsv with appropriate filenames for your data.
 
 ### 2. Genome Length Table
 Prepare a tab-separated file listing each genome's accession ID and its length. The format is:
