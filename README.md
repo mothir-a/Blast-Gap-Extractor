@@ -115,5 +115,5 @@ pip install pandas
 
 **Note:** You can reach out for support or questions related to the script.
 
-## References
-NA
+## Citation
+Motohiro Akashi, Masaharu Takemura and Seiichi Suzuki, Genome-Wide Characterization of Non-Shared Sequences among Amphora-Shaped Giant Viruses, 2025, XXXXXXXX
