@@ -13,11 +13,11 @@ blast_columns = [
     'query', 'subject', '% identity', 'alignment length', 'mismatches', 'gap opens',
     'q_start', 'q_end', 's_start', 's_end', 'evalue', 'bit score'
 ]
-blast_df = pd.read_csv('all_blastn_out.tsv', sep='\t', names=blast_columns)
+blast_df = pd.read_csv('blastn_out.tsv', sep='\t', names=blast_columns)
 
 # 2. loading genome length data
 genome_columns = ['acc.ver', 'length', 'gc%', 'gcsi']
-genome_df = pd.read_csv('all_n_seqinfo.tsv', sep='\t', names=genome_columns)
+genome_df = pd.read_csv('seqinfo.tsv', sep='\t', names=genome_columns)
 
 # 3. remove self-comparisons (delete lines where query and subject are the same)
 blast_df = blast_df[blast_df['query'] != blast_df['subject']]
