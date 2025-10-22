@@ -27,7 +27,7 @@ makeblastdb -in all_genomes.mfa -dbtype nucl
 blastn \
   -query all_genomes.mfa \
   -db all_genomes.mfa \
-  -out all_blastn_out.tsv \
+  -out blastn_out.tsv \
   -outfmt 6
 
 ** Note:** Replace all_genomes.mfa and all_blastn_out.tsv with appropriate filenames for your data.
@@ -57,8 +57,8 @@ python uncovered_region_extractor.py
 
 The script performs the following:
 
-- Reads the BLASTn result file (all_blastn_out.tsv)
-- Reads the genome length file (all_genomes_seqinfo.tsv)
+- Reads the BLASTn result file (blastn_out.tsv)
+- Reads the genome length file (seqinfo.tsv)
 - Removes self-comparisons from the BLAST results
 - Calculates uncovered regions (regions not covered by any alignment with other genomes)
 - Outputs these regions in a tab-separated format
