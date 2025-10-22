@@ -68,7 +68,17 @@ def find_uncovered_regions(blast_df, genome_lengths):
         if prev_end < length:
             uncovered_regions.append({'genome': genome, 'start': prev_end + 1, 'end': length})
 
-    return pd.DataFrame(uncovered_regions)
+    # Rearrange uncovered_regions to DataFrame.
+    df = pd.DataFrame(uncovered_regions)
+
+    # Remove data if the whole genomic region is assigned as uncovered region
+    if not df.empty:
+        df = df[~(
+            (df['start'] == 1) &
+            (df.apply(lambda x: x['end'] == genome_lengths.get(x['genome'], -1), axis=1))
+        )]
+
+    return df
 
 # 6. retrieve uncovered areas
 uncovered_df = find_uncovered_regions(blast_df, genome_lengths)
