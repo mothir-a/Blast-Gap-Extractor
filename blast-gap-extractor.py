@@ -13,11 +13,11 @@ blast_columns = [
     'query', 'subject', '% identity', 'alignment length', 'mismatches', 'gap opens',
     'q_start', 'q_end', 's_start', 's_end', 'evalue', 'bit score'
 ]
-blast_df = pd.read_csv('PanV_all_blastn_out.tsv', sep='\t', names=blast_columns)
+blast_df = pd.read_csv('all_blastn_out.tsv', sep='\t', names=blast_columns)
 
 # 2. loading genome length data
 genome_columns = ['acc.ver', 'length', 'gc%', 'gcsi']
-genome_df = pd.read_csv('PanV_all_n_seqinfo.tsv', sep='\t', names=genome_columns)
+genome_df = pd.read_csv('all_n_seqinfo.tsv', sep='\t', names=genome_columns)
 
 # 3. remove self-comparisons (delete lines where query and subject are the same)
 blast_df = blast_df[blast_df['query'] != blast_df['subject']]
@@ -84,6 +84,15 @@ def find_uncovered_regions(blast_df, genome_lengths):
 uncovered_df = find_uncovered_regions(blast_df, genome_lengths)
 
 # 7. save the results
-uncovered_df.to_csv('PanV_uncovered_regions.tsv', sep='\t', index=False)
+uncovered_df.to_csv('uncovered_regions.tsv', sep='\t', index=False)
 
-print(uncovered_df)
+# 6. retrieve uncovered areas
+uncovered_df = find_uncovered_regions(blast_df, genome_lengths)
+
+# 7. save the results
+if uncovered_df.empty:
+    print("No uncovered regions detected in any genome.")
+else:
+    uncovered_df.to_csv('uncovered_regions.tsv', sep='\t', index=False)
+    print("Uncovered regions have been saved to 'uncovered_regions.tsv'.")
+    print(uncovered_df)
