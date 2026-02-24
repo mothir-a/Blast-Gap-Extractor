@@ -10,6 +10,9 @@ This can be useful for:
 - Designing unique primers or probes
 - Exploring viral or microbial genomic diversity
 
+## Citation
+Akashi M, Takemura M, Suzuki S. 2026. Genome-Wide Characterization of Non-Shared Sequences among Amphora-Shaped Giant Viruses. Microbes Environ in press.
+
 ## Input
 
 ### 1. BLASTn Output (`outfmt 6`)
@@ -115,5 +118,3 @@ pip install pandas
 
 **Note:** You can reach out for support or questions related to the script.
 
-## Citation
-Akashi M, Takemura M, Suzuki S. 2026. Genome-Wide Characterization of Non-Shared Sequences among Amphora-Shaped Giant Viruses. Microbes Environ in press.
