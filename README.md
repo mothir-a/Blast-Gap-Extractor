@@ -11,7 +11,7 @@ This can be useful for:
 - Exploring viral or microbial genomic diversity
 
 ## Citation
-Akashi M, Takemura M, Suzuki S. 2026. Genome-Wide Characterization of Non-Shared Sequences among Amphora-Shaped Giant Viruses. Microbes Environ in press.
+Akashi M, Takemura M, Suzuki S. 2026. Genome-wide Characterization of Non-shared Sequences among Amphora-shaped Giant Viruses. Microbes Environ 41:1–10. https://doi.org/10.1264/jsme2.ME25085
 
 ## Input
 
